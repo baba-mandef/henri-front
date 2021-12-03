@@ -1,7 +1,25 @@
-@import "~bulma/sass/utilities/_all";
+@import "~bulma/sass/utilities/initial-variables";
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Quicksand&display=swap');
 
 // colors
-$primary : #3389cb;
+/*$primary : #3389cb;
+#ffc107
+*/
+
+//colors
+$gris : lightblue;
+$primary: $gris;
+$sur: #ffffff76;
+
+//navbar
+$navbar-item-color : white;
+$navbar-item-hover-background-color:#3e3e3e;
+$navbar-item-active-background-color : #67727b;
+$navbar-burger-color: #ffffff;
+$navbar-background-color : #ffffff00;
+
+//font
+$family-primary: 'Quicksand';
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
