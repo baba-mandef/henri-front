@@ -4,12 +4,19 @@ export default {
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true
+    }
+  }
+,  
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'henri-dev',
+    title: 'Henri-dev',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'fr'
     },
     meta: [
       { charset: 'utf-8' },
@@ -30,8 +37,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/vue2-filters',
+    '~plugins/vue-filter-date-format',
   ],
-
+  
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -43,9 +52,27 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
+    [
+      '@nuxtjs/i18n',
+      { /* module options */ }
+    ],
+    '@nuxtjs/axios'
+
+
   ],
+
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  // server
+  server:{
+    host:  "0.0.0.0"
+  },
+
+  axios: {},
+  
 }
+  
