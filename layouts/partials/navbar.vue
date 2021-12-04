@@ -13,13 +13,10 @@
         <nuxt-link to="/">Accueil</nuxt-link>
       </b-navbar-item>
       <b-navbar-item>
-        <nuxt-link to="/blog">Blog</nuxt-link>
-      </b-navbar-item>
-      <b-navbar-item>
         <nuxt-link to="/work">Projets</nuxt-link>
       </b-navbar-item>
       <b-navbar-item>
-        <nuxt-link to="/service">Services</nuxt-link>
+        <nuxt-link to="/blog">Blog</nuxt-link>
       </b-navbar-item>
     </template>
 
