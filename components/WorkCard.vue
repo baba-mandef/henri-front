@@ -44,17 +44,17 @@
           <p class="subtitle is-size-6 is-uppercase">
             {{ work.name }}
           </p>
-          <div class="buttons">
-            <b-button type="is-primary" expanded outlined
-              ><nuxt-link
-                :to="{
-                  path: 'work/work',
-                  query: { slug: '' + work.slug + '' },
-                }"
-                ><span style="color: black">Voir plus</span></nuxt-link
-              ></b-button
+          <nuxt-link
+              :to="{
+                path: 'work/details',
+                query: { slug: '' + work.slug + '' },
+              }"
+              >
+                <div class="buttons"><b-button type="is-primary" expanded outlined>
+                <span style="color: black">Lire</span></b-button
+              > </div> </nuxt-link
             >
-          </div>
+        
         </div>
       </div>
     </div>
@@ -116,7 +116,7 @@ export default {
 
   created() {
     axios
-      .get("http://192.168.0.193:8000/api/v1/work")
+      .get("http://sadih.herokuapp.com/api/v1/work")
       .then((response) => {
         const data = response.data;
         this.works = this.getLatest(2, data);
