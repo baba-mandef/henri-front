@@ -69,7 +69,7 @@ export default {
 
   // server
   server:{
-    host:  "0.0.0.0"
+    // host:  "0.0.0.0"
   },
 
   axios: {},
