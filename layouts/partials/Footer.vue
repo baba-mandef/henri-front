@@ -1,7 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="columns">
-        <div class="column">
+  
             <div class="content has-text-centered">
       <p>
         <strong>Henri-dev </strong> par
@@ -14,8 +13,7 @@
           >CC BY NC SA 4.0</a
         >
       </p>
-        </div>
-    </div>
+  
    
     </div>
     </div>
