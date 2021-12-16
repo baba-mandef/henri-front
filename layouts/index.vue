@@ -12,13 +12,15 @@
                 has-text-centered has-text-white
               "
             >
-              {-}ENRI-<span style="color:lightblue">DEV</span>
-          
+              {-}ENRI-<span style="color: lightblue">DEV</span>
             </h1>
             <br />
             <p class="subtitle has-text-centered sub" id="message">
               <vue-typer
-                :text="['{ Imagination, beyond comprehension ! }', '{ Let IT change your life ! }']"
+                :text="[
+                  '{ Imagination, beyond comprehension ! }',
+                  '{ Let IT change your life ! }',
+                ]"
                 :repeat="3"
                 :shuffle="false"
                 initial-action="typing"
