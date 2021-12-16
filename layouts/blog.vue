@@ -12,13 +12,16 @@
                 has-text-centered has-text-white
               "
             >
-              <span style="color:lightblue">{ </span> BLOG <span style="color:lightblue">}</span>
-          
+              <span style="color: lightblue">{ </span> BLOG
+              <span style="color: lightblue">}</span>
             </h1>
             <br />
             <p class="subtitle has-text-centered sub" id="message">
               <vue-typer
-                :text="['{ Imagination, beyond comprehension ! }', '{ Let IT change your life ! }']"
+                :text="[
+                  '{ Imagination, beyond comprehension ! }',
+                  '{ Let IT change your life ! }',
+                ]"
                 :repeat="3"
                 :shuffle="false"
                 initial-action="typing"
