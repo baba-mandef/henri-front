@@ -1,57 +1,58 @@
 <template>
-  <div class="hero-body blog-hero" v-if="loaded">
-    <div
-      class="has-text-centered"
-      style="margin-top: 15px; margin-bottom: 30px"
-    >
-      <p class="title is-size-4 is-size-5-mobile" style="padding-bottom: ">
-        Articles récents
-        <b-icon
-          icon="file-document-outline"
-          size="#is-small"
-          style="color: lightblue"
-        ></b-icon>
-      </p>
-    </div>
-    <div class="columns">
+  <div class="hero-body blog-hero">
+    <div v-if="loaded">
       <div
-        class="column is-4 is blog-prev"
-        v-for="post in posts"
-        :key="post.id"
+        class="has-text-centered"
+        style="margin-top: 15px; margin-bottom: 30px"
       >
-        <div
-          class="blog-prev-img"
-          v-bind:style="{
-            'background-image': 'url(' + post.banner + ')',
-          }"
-        ></div>
-        <hr />
-        <div class="">
-          <small class="is-uppercase">
-            <span
-              ><b-icon style="color: lightblue" icon="calendar" size="is-small">
-              </b-icon>
-            </span>
-            {{ new Date(post.created_at) | dateFormat("DD MMM YYYY") }} |
-            <span
-              ><b-icon style="color: lightblue" icon="folder" size="is-small">
-              </b-icon>
-            </span>
-            {{ post.category }} |
-            <span
-              ><b-icon style="color: lightblue" icon="eye" size="is-small">
-              </b-icon>
-            </span>
-            {{ post.view }}</small
-          >
-        </div>
-        <hr />
-        <div>
-          <p class="subtitle is-size-6 is-uppercase">
-            {{ post.title }}
-          </p>
+        <p class="title is-size-4 is-size-5-mobile" style="padding-bottom: ">
+          Articles récents
+          <b-icon
+            icon="file-document-outline"
+            size="#is-small"
+            style="color: lightblue"
+          ></b-icon>
+        </p>
+      </div>
+      <div class="columns">
+        <div class="column is-4 blog-prev" v-for="post in posts" :key="post.id">
+          <div
+            class="blog-prev-img"
+            v-bind:style="{
+              'background-image': 'url(' + post.banner + ')',
+            }"
+          ></div>
+          <hr />
+          <div class="">
+            <small class="is-uppercase">
+              <span
+                ><b-icon
+                  style="color: lightblue"
+                  icon="calendar"
+                  size="is-small"
+                >
+                </b-icon>
+              </span>
+              {{ new Date(post.created_at) | dateFormat("DD MMM YYYY") }} |
+              <span
+                ><b-icon style="color: lightblue" icon="folder" size="is-small">
+                </b-icon>
+              </span>
+              {{ post.category }} |
+              <span
+                ><b-icon style="color: lightblue" icon="eye" size="is-small">
+                </b-icon>
+              </span>
+              {{ post.view }}</small
+            >
+          </div>
+          <hr />
+          <div>
+            <p class="subtitle is-size-6 is-uppercase">
+              {{ post.title }}
+            </p>
 
-           <nuxt-link
+            <nuxt-link
               :to="{
                 path: 'blog/post',
                 query: { slug: '' + post.slug + '' },
@@ -60,23 +61,50 @@
                 <span style="color: black">Lire</span></b-button
               ></nuxt-link
             >
-          <div class="buttons">
-           
+            <div class="buttons"></div>
           </div>
         </div>
       </div>
+      <div class="column is-full has-text-centered">
+        <p class="title is-size-5">
+          <nuxt-link to="/blog" style="color: lightblue"
+            >Voir tous les articles
+            <span
+              ><b-icon
+                style="color: lightblue"
+                icon="hand-pointing-left"
+              ></b-icon></span
+          ></nuxt-link>
+        </p>
+      </div>
     </div>
-    <div class="column is-full has-text-centered">
-      <p class="title is-size-5">
-        <nuxt-link to="/blog" style="color: lightblue"
-          >Voir tous les articles
-          <span
-            ><b-icon
-              style="color: lightblue"
-              icon="hand-pointing-left"
-            ></b-icon></span
-        ></nuxt-link>
-      </p>
+    <div v-if="!loaded" class="columns">
+      <div class="column is-4 blog-prev">
+        <p>
+          <b-skeleton height="215px" style=""></b-skeleton>
+
+          <b-skeleton active :count="1"></b-skeleton>
+          <b-skeleton height="80px" style=""></b-skeleton>
+        </p>
+      </div>
+
+      <!--   <div class="column is-4 blog-prev">
+        <p>
+          <b-skeleton height="215px" style=""></b-skeleton>
+
+          <b-skeleton active :count="1"></b-skeleton>
+          <b-skeleton height="80px" style=""></b-skeleton>
+        </p>
+      </div>
+
+       <div class="column is-4 blog-prev">
+        <p>
+          <b-skeleton height="215px" style=""></b-skeleton>
+
+          <b-skeleton active :count="1"></b-skeleton>
+          <b-skeleton height="80px" style=""></b-skeleton>
+        </p>
+      </div> -->
     </div>
   </div>
 </template>

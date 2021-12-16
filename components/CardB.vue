@@ -3,11 +3,7 @@
     <div class="card">
       <header class="card-header">
         <p class="card-header-title has-text-black is-size-6">
-     
-          <slot name="header">
-            
-          </slot>
-          
+          <slot name="header"> </slot>
         </p>
       </header>
       <div class="card-content">
@@ -18,19 +14,15 @@
         </div>
       </div>
       <footer class="card-footer">
-        <div class="card-footer-item">
-         
-        </div>
+        <div class="card-footer-item"></div>
       </footer>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-}
+export default {};
 </script>
 
 <style>
-
 </style>

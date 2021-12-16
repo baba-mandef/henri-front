@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-body work-hero" v-if="loaded">
+  <div class="hero-body work-hero">
     <div
       class="has-text-centered"
       style="margin-top: 15px; margin-bottom: 30px"
@@ -18,43 +18,59 @@
         <div class="work-img"></div>
       </div>
 
-      <div
-        class="column is-3 is work-prev"
-        v-for="work in works"
-        :key="work.id"
-      >
+      <div v-if="!loaded" class="column is-3">
+        <p>
+          <b-skeleton height="215px" style=""></b-skeleton>
+
+          <b-skeleton active :count="1"></b-skeleton>
+          <b-skeleton height="80px" style=""></b-skeleton>
+        </p>
+      </div>
+
+      <div v-if="loaded">
         <div
-          class="work-prev-img"
-          v-bind:style="{
-            'background-image': 'url(' + work.banner + ')',
-          }"
-        ></div>
-        <hr />
-        <div class="">
-          <small class="is-uppercase"
-            >{{ new Date(work.created_at) | dateFormat("DD MMM YYYY") }}
-            <span
-              ><b-icon style="color: lightblue" icon="calendar" size="is-small">
-              </b-icon>
-            </span>
-          </small>
-        </div>
-        <hr />
-        <div>
-          <p class="subtitle is-size-6 is-uppercase">
-            {{ work.name }}
-          </p>
-          <nuxt-link
+          class="column is-3 is work-prev"
+          v-for="work in works"
+          :key="work.id"
+        >
+          <div
+            class="work-prev-img"
+            v-bind:style="{
+              'background-image': 'url(' + work.banner + ')',
+            }"
+          ></div>
+          <hr />
+          <div class="">
+            <small class="is-uppercase"
+              >{{ new Date(work.created_at) | dateFormat("DD MMM YYYY") }}
+              <span
+                ><b-icon
+                  style="color: lightblue"
+                  icon="calendar"
+                  size="is-small"
+                >
+                </b-icon>
+              </span>
+            </small>
+          </div>
+          <hr />
+          <div>
+            <p class="subtitle is-size-6 is-uppercase">
+              {{ work.name }}
+            </p>
+            <nuxt-link
               :to="{
-                path: 'work/details',
+                path: 'work/single',
                 query: { slug: '' + work.slug + '' },
               }"
-              >
-                <div class="buttons"><b-button type="is-primary" expanded outlined>
-                <span style="color: black">Lire</span></b-button
-              > </div> </nuxt-link
             >
-        
+              <div class="buttons">
+                <b-button type="is-primary" expanded outlined>
+                  <span style="color: black">Lire</span></b-button
+                >
+              </div>
+            </nuxt-link>
+          </div>
         </div>
       </div>
     </div>
@@ -131,14 +147,14 @@ export default {
 </script>
 
 <style>
-.work-img{
+.work-img {
   background-repeat: no-repeat;
-          padding: 20px;
-          background-size:contain;
-          background-position:center;
-          background-image: url('../assets/images/3.png');
-          height:300px;
-         margin: 0;
+  padding: 20px;
+  background-size: contain;
+  background-position: center;
+  background-image: url("../assets/images/3.png");
+  height: 300px;
+  margin: 0;
 }
 .work-prev {
   /*  border: solid 1px lightblue; */
@@ -151,7 +167,7 @@ export default {
     border-radius: 2%;
     margin: 5px;
   }
-  .work-img{
+  .work-img {
     margin-top: 60px;
   }
 }

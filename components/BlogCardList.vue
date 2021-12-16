@@ -10,9 +10,8 @@
         ></div>
       </div>
       <div class="column">
-
         <div class="">
-            <hr>
+          <hr />
           <small class="is-uppercase">
             <span
               ><b-icon style="color: lightblue" icon="calendar" size="is-small">
@@ -52,7 +51,6 @@
         </div>
       </div>
     </div>
-   
   </div>
 </template>
 
