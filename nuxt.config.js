@@ -3,11 +3,11 @@ export default {
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: 'server',
   vue: {
     config: {
       productionTip: false,
-      devtools: true
+      devtools: false
     }
   }
 ,  
@@ -65,11 +65,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    
   },
 
   // server
   server:{
-    // host:  "0.0.0.0"
+     host:  "0.0.0.0"
   },
 
   axios: {},
