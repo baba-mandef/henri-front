@@ -1,11 +1,9 @@
 <template>
   <section class="section">
-      <About></About>
-      <WorkCard></WorkCard>
-      <BlogCard></BlogCard>
-      <Contact></Contact>
-      
-  
+    <About></About>
+    <WorkCard></WorkCard>
+    <BlogCard></BlogCard>
+    <Contact></Contact>
   </section>
 </template>
 
@@ -23,18 +21,14 @@ export default {
   data() {
     return {
       rounded: false,
-     
-     
     };
   },
-  
+
   layout: "index",
 };
 </script>
 
 <style>
-
-
 .hero-img {
   background-repeat: no-repeat;
   background-size: cover;
@@ -52,5 +46,4 @@ export default {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 </style>

@@ -56,37 +56,91 @@
         </div>
 
         <div class="container is-max-desktop" v-if="loaded">
-          <h3 class="title is-3" style="padding-bottom:30px">Commentaires</h3>
+          <h3 class="title is-3" style="padding-bottom: 30px">
+            Commentaires
+            <b-button
+              label="Ajouter un commentaire"
+              type="is-primary"
+              @click="modal = true"
+            />
+          </h3>
 
-         <div>
+          <b-collapse :open="modal">
+            <div style="padding-bottom: 40px">
+              <form action="">
+                <b-field label="Votre nom">
+                  <b-input
+                    v-model="nom"
+                    required
+                    validation-message="Ce champs est requis"
+                  >
+                  </b-input>
+                </b-field>
+
+                <b-field label="Email (anonyme)">
+                  <b-input
+                    v-model="email"
+                    required
+                    validation-message="Ce champs est requis"
+                  >
+                  </b-input>
+                </b-field>
+
+                <b-field label="Commentaire">
+                  <b-input
+                    v-model="message"
+                    type="textarea"
+                    required
+                    validation-message="Ce champs est requis"
+                  >
+                  </b-input>
+                </b-field>
+
+                <b-field class="file">
+                  <b-upload v-model="image" expanded>
+                    <a class="button is-primary is-fullwidth">
+                      <b-icon icon="upload"></b-icon>
+                      <span>{{ "Cliquez pour uploader une image" }}</span>
+                    </a>
+                  </b-upload>
+                </b-field>
+                <b-button
+                  label="Envoyer"
+                  type="is-primary"
+                  @click="submit_comment"
+                />
+
+                <b-button
+                  label="Fermer"
+                  type="is-primary"
+                  @click="modal = false"
+                />
+              </form>
+            </div>
+          </b-collapse>
+
+          <div>
             <div class="columns" v-for="comment in comments" :key="comment.id">
-            <div class="column is-full comment">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img
-                      :src="comment.author_pic"
-                      alt="Author picture"
-                    />
-                  </figure>
-                </div>
-                <div class="media-content">
-                 
-                  <p>{{comment.body}}</p>
-                  <hr>
-                   <p class="title is-6 has-text-right">{{comment.author_name}}, {{comment.created_at | humanizeDate}}</p>
+              <div class="column is-full comment">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img :src="comment.author_pic" alt="Author picture" />
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p>{{ comment.body }}</p>
+                    <hr />
+                    <p class="title is-6 has-text-right">
+                      {{ comment.author_name }},
+                      {{ comment.created_at | humanizeDate }}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-   
-
-         </div>
         </div>
-
-
-
       </div>
     </section>
   </section>
@@ -104,13 +158,18 @@ export default {
       pk: null,
       comments: [],
       loaded: false,
-      ip: null,
+      modal: false,
+      nom: "",
+      email: "",
+      message: "",
+      image: null,
     };
   },
 
   filters: {
     humanizeDate(value) {
       var moment = require("moment");
+      moment.locale("fr");
       moment().format();
 
       return moment(value).fromNow();
@@ -120,7 +179,7 @@ export default {
   methods: {
     snackbar() {
       this.$buefy.snackbar.open({
-        duration: 15000,
+        duration: 10000,
         message:
           "Le contenu de la page n'est pas entierement chargé. Veuillez verifier votre connexion internet",
         type: "is-danger",
@@ -128,9 +187,45 @@ export default {
         actionText: "Rafraîchir",
         queue: false,
         onAction: () => {
-          location.reload();
+          this.$router.go();
         },
       });
+    },
+
+    submit_comment() {
+      var FormData = require("form-data");
+      // var fs = require("fs-extra");
+      var data = new FormData();
+      data.append("author_name", this.nom);
+      data.append("author_mail", this.email);
+      data.append("body", this.message);
+      data.append("post", this.pk);
+      if (this.image != null) {
+        data.append("author_pic", this.image);
+      }
+
+      var config = {
+        method: "post",
+        url: "http://sadih.herokuapp.com/api/v1/blog/comment",
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        data: data,
+      };
+
+      axios(config)
+        .then(function (response) {
+          // this.modal = false;
+
+          this.$buefy.toast.open("Votre commentaire à été publié avec succès");
+
+          console.log(JSON.stringify(response.data));
+          this.snackbar();
+        })
+
+        .catch(function (error) {
+          console.log(error);
+        });
     },
   },
   created() {
@@ -152,14 +247,16 @@ export default {
 
             this.loaded = true;
             axios
-            .get("http://sadih.herokuapp.com/api/v1/countView/?post=" + post_pk)
-            .then(function response(){
-              console.log(response.data);
-
-            }
-            .catch(function error(){
-              console.log(error)
-            }))
+              .get(
+                "http://sadih.herokuapp.com/api/v1/countView/?post=" + post_pk
+              )
+              .then(
+                function response() {
+                  console.log(response.data);
+                }.catch(function error() {
+                  console.log(error);
+                })
+              );
           })
           .catch((error) => {
             this.snackbar();
@@ -171,9 +268,6 @@ export default {
         console.log(error);
       });
   },
-
-  
-
 };
 </script>
 
@@ -181,7 +275,7 @@ export default {
 <style>
 .comment {
   margin-bottom: 30px;
-  background-color: rgb(221, 219, 219);
+  background-color: rgb(230, 230, 230);
   border-radius: 10px;
 }
 </style>
