@@ -12,8 +12,5 @@ import Footer from "./partials/Footer.vue";
 
 export default {
   components: { navbar, Footer },
-
-  
-
 };
 </script>
