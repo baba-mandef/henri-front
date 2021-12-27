@@ -41,6 +41,6 @@
   color: white;
 }
 a.nuxt-link-exact-active {
-  color: lightblue;
+  color: #2BABE2;
 }
 </style>

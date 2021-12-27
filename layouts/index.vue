@@ -12,7 +12,7 @@
                 has-text-centered has-text-white
               "
             >
-              {-}ENRI-<span style="color: lightblue">DEV</span>
+              {-}ENRI-<span style="color: #2BABE2">DEV</span>
             </h1>
             <br />
             <p class="subtitle has-text-centered sub" id="message">

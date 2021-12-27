@@ -9,7 +9,7 @@
         <b-icon
           icon="folder-outline"
           size="#is-small"
-          style="color: lightblue"
+          style="color: #2BABE2"
         ></b-icon>
       </p>
     </div>
@@ -45,7 +45,7 @@
               >{{ new Date(work.created_at) | dateFormat("DD MMM YYYY") }}
               <span
                 ><b-icon
-                  style="color: lightblue"
+                  style="color: #2BABE2"
                   icon="calendar"
                   size="is-small"
                 >
@@ -76,11 +76,11 @@
     </div>
     <div class="column is-full has-text-centered">
       <p class="title is-size-5">
-        <nuxt-link to="/work" style="color: lightblue"
+        <nuxt-link to="/work" style="color: #2BABE2"
           >Voir tous les projets
           <span
             ><b-icon
-              style="color: lightblue"
+              style="color: #2BABE2"
               icon="hand-pointing-left"
             ></b-icon></span
         ></nuxt-link>
@@ -157,13 +157,13 @@ export default {
   margin: 0;
 }
 .work-prev {
-  /*  border: solid 1px lightblue; */
+  /*  border: solid 1px #2BABE2; */
   border-radius: 2%;
   margin: 5px;
 }
 @media screen and (min-width: 768px) {
   .work-prev {
-    /*  border: solid 1px lightblue; */
+    /*  border: solid 1px #2BABE2; */
     border-radius: 2%;
     margin: 5px;
   }
@@ -177,7 +177,7 @@ export default {
   background-position: center;
 
   height: 215px;
-  border: solid 1px lightblue;
+  border: solid 1px #2BABE2;
 }
 .center {
   margin: 0;

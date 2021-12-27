@@ -21,7 +21,7 @@
             <small class="is-uppercase">
               <span
                 ><b-icon
-                  style="color: lightblue"
+                  style="color: #2BABE2"
                   icon="calendar"
                   size="is-small"
                 >
@@ -29,12 +29,12 @@
               </span>
               {{ new Date(post.created_at) | dateFormat("DD MMM YYYY") }} |
               <span
-                ><b-icon style="color: lightblue" icon="folder" size="is-small">
+                ><b-icon style="color: #2BABE2" icon="folder" size="is-small">
                 </b-icon>
               </span>
               {{ post.category }} |
               <span
-                ><b-icon style="color: lightblue" icon="eye" size="is-small">
+                ><b-icon style="color: #2BABE2" icon="eye" size="is-small">
                 </b-icon>
               </span>
               {{ post.view }}

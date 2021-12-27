@@ -12,8 +12,8 @@
                 has-text-centered has-text-white
               "
             >
-              <span style="color: lightblue">{ </span> BLOG
-              <span style="color: lightblue">}</span>
+              <span style="color: #2BABE2">{ </span> BLOG
+              <span style="color: #2BABE2">}</span>
             </h1>
             <br />
             <p class="subtitle has-text-centered sub" id="message">

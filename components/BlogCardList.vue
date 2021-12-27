@@ -14,17 +14,17 @@
           <hr />
           <small class="is-uppercase">
             <span
-              ><b-icon style="color: lightblue" icon="calendar" size="is-small">
+              ><b-icon style="color: #2BABE2" icon="calendar" size="is-small">
               </b-icon>
             </span>
             {{ new Date(post.created_at) | dateFormat("DD MMM YYYY") }} |
             <span
-              ><b-icon style="color: lightblue" icon="folder" size="is-small">
+              ><b-icon style="color: #2BABE2" icon="folder" size="is-small">
               </b-icon>
             </span>
             {{ post.category }} |
             <span
-              ><b-icon style="color: lightblue" icon="eye" size="is-small">
+              ><b-icon style="color: #2BABE2" icon="eye" size="is-small">
               </b-icon>
             </span>
             {{ post.view }}</small
@@ -98,13 +98,13 @@ export default {
 
 <style>
 .blog-prev {
-  /*  border: solid 1px lightblue; */
+  /*  border: solid 1px #2BABE2; */
   border-radius: 2%;
   margin: 5px;
 }
 @media screen and (min-width: 768px) {
   .blog-prev {
-    /*  border: solid 1px lightblue; */
+    /*  border: solid 1px #2BABE2; */
     border-radius: 2%;
     margin: 5px;
   }
@@ -115,7 +115,7 @@ export default {
   background-position: center;
 
   height: 215px;
-  border: solid 1px lightblue;
+  border: solid 1px #2BABE2;
 }
 .center {
   margin: 0;

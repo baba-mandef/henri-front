@@ -7,7 +7,7 @@
             A propos de moi
             <span></span>
             <b-icon
-              style="color: lightblue"
+              style="color: #2BABE2"
               icon="chat-alert-outline"
               size="is-small"
             >
@@ -102,7 +102,7 @@
               <h4>
                 Tech Stack
                 <b-icon
-                  style="color: lightblue"
+                  style="color: #2BABE2"
                   icon="cog-outline"
                   size="is-small"
                 >
@@ -117,7 +117,7 @@
                     Django
                     <span
                       ><b-icon
-                        style="color: lightblue"
+                        style="color: #2BABE2"
                         icon="web"
                         size="is-small"
                       >
@@ -128,7 +128,7 @@
                     DRF
                     <span
                       ><b-icon
-                        style="color: lightblue"
+                        style="color: #2BABE2"
                         icon="api"
                         size="is-small"
                       >
@@ -143,7 +143,7 @@
                     Vuejs
                     <span
                       ><b-icon
-                        style="color: lightblue"
+                        style="color: #2BABE2"
                         icon="vuejs"
                         size="is-small"
                       >
@@ -154,7 +154,7 @@
                     Nuxtjs
                     <span
                       ><b-icon
-                        style="color: lightblue"
+                        style="color: #2BABE2"
                         icon="nuxt"
                         size="is-small"
                       >
@@ -171,7 +171,7 @@
                     Android
                     <span
                       ><b-icon
-                        style="color: lightblue"
+                        style="color: #2BABE2"
                         icon="android"
                         size="is-small"
                       >
@@ -198,7 +198,7 @@
                     MySql
                     <span
                       ><b-icon
-                        style="color: lightblue"
+                        style="color: #2BABE2"
                         icon="database-outline"
                         size="is-small"
                       >
@@ -209,7 +209,7 @@
                     Postgresql
                     <span
                       ><b-icon
-                        style="color: lightblue"
+                        style="color: #2BABE2"
                         icon="database-outline"
                         size="is-small"
                       >
@@ -250,7 +250,7 @@
                         Django
                         <span
                           ><b-icon
-                            style="color: lightblue"
+                            style="color: #2BABE2"
                             icon="web"
                             size="is-small"
                           >
@@ -261,7 +261,7 @@
                         DRF
                         <span
                           ><b-icon
-                            style="color: lightblue"
+                            style="color: #2BABE2"
                             icon="api"
                             size="is-small"
                           >
@@ -362,7 +362,7 @@ export default {
 
 <style>
 .tabs li.is-active a {
-  color: lightblue;
+  color: #2BABE2;
 }
 .center {
   margin: 0;

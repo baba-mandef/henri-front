@@ -19,3 +19,9 @@
     </div>
   </footer>
 </template>
+
+<style>
+  a{
+    color:#2BABE2;
+  }
+</style>
