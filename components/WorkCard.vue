@@ -13,12 +13,7 @@
         ></b-icon>
       </p>
     </div>
-    <div class="columns">
-      <div class="column is-half">
-        <div class="work-img"></div>
-      </div>
-
-      <div v-if="!loaded" class="column is-3">
+     <div v-if="!loaded" class="column is-3">
         <p>
           <b-skeleton height="215px" style=""></b-skeleton>
 
@@ -26,10 +21,13 @@
           <b-skeleton height="80px" style=""></b-skeleton>
         </p>
       </div>
+    <div class="columns" v-if="loaded">
+      <div class="column is-6">
+        <div class="work-img"></div>
+      </div>
 
-      <div v-if="loaded">
         <div
-          class="column is-3 is work-prev"
+          class="column  work-prev"
           v-for="work in works"
           :key="work.id"
         >
@@ -72,7 +70,6 @@
             </nuxt-link>
           </div>
         </div>
-      </div>
     </div>
     <div class="column is-full has-text-centered">
       <p class="title is-size-5">
@@ -132,7 +129,7 @@ export default {
 
   created() {
     axios
-      .get("http://sadih.herokuapp.com/api/v1/work")
+      .get(this.$axios.defaults.baseURL+"/api/v1/work")
       .then((response) => {
         const data = response.data;
         this.works = this.getLatest(2, data);
@@ -156,11 +153,7 @@ export default {
   height: 300px;
   margin: 0;
 }
-.work-prev {
-  /*  border: solid 1px #2BABE2; */
-  border-radius: 2%;
-  margin: 5px;
-}
+
 @media screen and (min-width: 768px) {
   .work-prev {
     /*  border: solid 1px #2BABE2; */

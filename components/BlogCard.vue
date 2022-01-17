@@ -152,7 +152,7 @@ export default {
 
   created() {
     axios
-      .get("http://sadih.herokuapp.com/api/v1/blog/post")
+      .get(this.$axios.defaults.baseURL+"/api/v1/blog/post")
       .then((response) => {
         const data = response.data;
         this.posts = this.getLatest(3, data);

@@ -83,7 +83,7 @@ export default {
 
   created() {
     axios
-      .get("http://sadih.herokuapp.com/api/v1/blog/post")
+      .get(this.$axios.defaults.baseURL+"/api/v1/blog/post")
       .then((response) => {
         this.posts = response.data;
         this.loaded = true;

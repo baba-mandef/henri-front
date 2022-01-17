@@ -20,21 +20,17 @@
             <hr />
             <small class="is-uppercase">
               <span
-                ><b-icon
-                  style="color: #2BABE2"
-                  icon="calendar"
-                  size="is-small"
-                >
+                ><b-icon style="color: #2babe2" icon="calendar" size="is-small">
                 </b-icon>
               </span>
               {{ new Date(post.created_at) | dateFormat("DD MMM YYYY") }} |
               <span
-                ><b-icon style="color: #2BABE2" icon="folder" size="is-small">
+                ><b-icon style="color: #2babe2" icon="folder" size="is-small">
                 </b-icon>
               </span>
               {{ post.category }} |
               <span
-                ><b-icon style="color: #2BABE2" icon="eye" size="is-small">
+                ><b-icon style="color: #2babe2" icon="eye" size="is-small">
                 </b-icon>
               </span>
               {{ post.view }}
@@ -133,7 +129,7 @@
                     <hr />
                     <p class="title is-6 has-text-right">
                       {{ comment.author_name }},
-                      {{ comment.created_at | humanizeDate }}
+                      {{ comment.created_at | humanizeDate }} à {{new Date(comment.created_at ) | dateFormat("HH : mm")}}
                     </p>
                   </div>
                 </div>
@@ -206,7 +202,7 @@ export default {
 
       var config = {
         method: "post",
-        url: "http://sadih.herokuapp.com/api/v1/blog/comment",
+        url: this.$axios.defaults.baseURL + "/api/v1/blog/comment",
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -220,7 +216,7 @@ export default {
           this.$buefy.toast.open("Votre commentaire à été publié avec succès");
 
           console.log(JSON.stringify(response.data));
-          this.snackbar();
+          
         })
 
         .catch(function (error) {
@@ -230,7 +226,8 @@ export default {
   },
   created() {
     var url =
-      "http://sadih.herokuapp.com/api/v1/blog/post?slug=" +
+      this.$axios.defaults.baseURL +
+      "/api/v1/blog/post?slug=" +
       this.$route.query.slug;
 
     axios
@@ -241,14 +238,20 @@ export default {
         this.pk = post_pk;
 
         axios
-          .get("http://sadih.herokuapp.com/api/v1/blog/comment?post=" + post_pk)
+          .get(
+            this.$axios.defaults.baseURL +
+              "/api/v1/blog/comment?post=" +
+              post_pk
+          )
           .then((response) => {
             this.comments = response.data;
 
             this.loaded = true;
             axios
               .get(
-                "http://sadih.herokuapp.com/api/v1/countView/?post=" + post_pk
+                this.$axios.defaults.baseURL +
+                  "/api/v1/countView/?post=" +
+                  post_pk
               )
               .then(
                 function response() {
@@ -259,7 +262,7 @@ export default {
               );
           })
           .catch((error) => {
-            this.snackbar();
+            
             console.log(error);
           });
       })

@@ -21,7 +21,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Imagination, beyond comprehenson' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -46,6 +46,9 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+
+    
+
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -56,8 +59,8 @@ export default {
       '@nuxtjs/i18n',
       { /* module options */ }
     ],
-    '@nuxtjs/axios'
-
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
 
   ],
 
@@ -73,7 +76,36 @@ export default {
 //     host:  "0.0.0.0"
   },
 
-  axios: {},
+  axios: {
+    baseURL:'https://shadowcompiler.pythonanywhere.com'
+  },
+
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.BROWSER_BASE_URL
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL
+    }
+  },
+
+  netlify: { 
+    headers: {
+      '/*': [
+        'Access-Control-Allow-Origin: *'
+      ],
+      '/favicon.ico': [
+        'Cache-Control: public, max-age=86400'
+      ]
+    }
+  },
+
+pwa: {
+    icon: true // disables the icon module
+  }
   
 }
   
