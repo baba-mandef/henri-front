@@ -129,7 +129,7 @@
                     <hr />
                     <p class="title is-6 has-text-right">
                       {{ comment.author_name }},
-                      {{ comment.created_at | humanizeDate }} à {{new Date(comment.created_at ) | dateFormat("HH : mm")}}
+                      {{ comment.created_at | humanizeDate }} à {{new Date(comment.created_at ) | dateFormat("HH  mm")}}
                     </p>
                   </div>
                 </div>
