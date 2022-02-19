@@ -20,11 +20,7 @@
             <hr />
             <small class="is-uppercase">
               <span
-                ><b-icon
-                  style="color: #2BABE2"
-                  icon="calendar"
-                  size="is-small"
-                >
+                ><b-icon style="color: #2babe2" icon="calendar" size="is-small">
                 </b-icon>
               </span>
               {{ new Date(work.created_at) | dateFormat("DD MMM YYYY") }}
@@ -44,8 +40,6 @@
             <b-skeleton active :count="6"></b-skeleton>
           </p>
         </div>
-
-      
       </div>
     </section>
   </section>
@@ -62,11 +56,10 @@ export default {
       works: [],
       pk: null,
       loaded: false,
-      
     };
   },
 
-   /*head() {
+  /*head() {
     return {
       title: "Henri-dev | Projects : "+this.works[0]['name'],
       meta: [
@@ -143,12 +136,11 @@ export default {
         },
       });
     },
-
-    
   },
   created() {
     var url =
-      this.$axios.defaults.baseURL+"/api/v1/work?slug=" +
+      this.$axios.defaults.baseURL +
+      "/api/v1/work?slug=" +
       this.$route.query.slug;
 
     axios
@@ -157,7 +149,7 @@ export default {
         this.works = response.data;
         var post_pk = response.data[0]["id"];
         this.pk = post_pk;
-        this.loaded=true;
+        this.loaded = true;
       })
       .catch((error) => {
         this.snackbar();

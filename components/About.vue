@@ -29,7 +29,7 @@
             </div>
             <div class="about-img">
               <b-image
-                :src='require("~/assets/images/2.png")'
+                :src='require("~/assets/images/brand2.png")'
                 alt="Profile"
                 ratio="1by1"
                 :rounded="rounded"
@@ -46,10 +46,12 @@
                 style="color: black"
                 class="has-text-justified has-text-centered-mobile"
               >
-                Hi ! Je suis Salaou-Deen Henri-Joël Abiodoun Paraïso. Titulaire d'une licence en
+                Yo ! Je suis Salaou-Deen Henri-Joël Abiodoun Paraïso. Titulaire d'une licence en
                 Systèmes Informatiques et Logiciels, je suis développeur web et
                 mobile. A mes heures perdues, je joue aux jeux vidéos, je
-                partage des memes et j'explore.
+                partage des memes et j'explore. Parlez moi de programmation, de cuisine, 
+                de manga de cheveux naturels et de jeux vidéos.
+
               </p>
               <hr />
               <h5 class="is-title has-text-centered-mobile">

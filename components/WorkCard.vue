@@ -9,11 +9,54 @@
         <b-icon
           icon="folder-outline"
           size="#is-small"
-          style="color: #2BABE2"
+          style="color: #2babe2"
         ></b-icon>
       </p>
     </div>
-     <div v-if="!loaded" class="column is-3">
+    <div class="columns" v-if="loaded">
+      <div class="column is-6">
+        <div class="work-img"></div>
+      </div>
+
+      <div class="column work-prev" v-for="work in works" :key="work.id">
+        <div
+          class="work-prev-img"
+          v-bind:style="{
+            'background-image': 'url(' + work.banner + ')',
+          }"
+        ></div>
+        <hr />
+        <div class="">
+          <small class="is-uppercase"
+            >{{ new Date(work.created_at) | dateFormat("DD MMM YYYY") }}
+            <span
+              ><b-icon style="color: #2babe2" icon="calendar" size="is-small">
+              </b-icon>
+            </span>
+          </small>
+        </div>
+        <hr />
+        <div>
+          <p class="subtitle is-size-6 is-uppercase">
+            {{ work.name }}
+          </p>
+          <nuxt-link
+            :to="{
+              path: 'work/single',
+              query: { slug: '' + work.slug + '' },
+            }"
+          >
+            <div class="buttons">
+              <b-button type="is-primary" expanded outlined>
+                <span style="color: black">Lire</span></b-button
+              >
+            </div>
+          </nuxt-link>
+        </div>
+      </div>
+    </div>
+     <div v-if="!loaded" class="columns">
+      <div class="column is-4 blog-prev">
         <p>
           <b-skeleton height="215px" style=""></b-skeleton>
 
@@ -21,63 +64,14 @@
           <b-skeleton height="80px" style=""></b-skeleton>
         </p>
       </div>
-    <div class="columns" v-if="loaded">
-      <div class="column is-6">
-        <div class="work-img"></div>
-      </div>
-
-        <div
-          class="column  work-prev"
-          v-for="work in works"
-          :key="work.id"
-        >
-          <div
-            class="work-prev-img"
-            v-bind:style="{
-              'background-image': 'url(' + work.banner + ')',
-            }"
-          ></div>
-          <hr />
-          <div class="">
-            <small class="is-uppercase"
-              >{{ new Date(work.created_at) | dateFormat("DD MMM YYYY") }}
-              <span
-                ><b-icon
-                  style="color: #2BABE2"
-                  icon="calendar"
-                  size="is-small"
-                >
-                </b-icon>
-              </span>
-            </small>
-          </div>
-          <hr />
-          <div>
-            <p class="subtitle is-size-6 is-uppercase">
-              {{ work.name }}
-            </p>
-            <nuxt-link
-              :to="{
-                path: 'work/single',
-                query: { slug: '' + work.slug + '' },
-              }"
-            >
-              <div class="buttons">
-                <b-button type="is-primary" expanded outlined>
-                  <span style="color: black">Lire</span></b-button
-                >
-              </div>
-            </nuxt-link>
-          </div>
-        </div>
-    </div>
+     </div>
     <div class="column is-full has-text-centered">
       <p class="title is-size-5">
-        <nuxt-link to="/work" style="color: #2BABE2"
+        <nuxt-link to="/work" style="color: #2babe2"
           >Voir tous les projets
           <span
             ><b-icon
-              style="color: #2BABE2"
+              style="color: #2babe2"
               icon="hand-pointing-left"
             ></b-icon></span
         ></nuxt-link>
@@ -129,7 +123,7 @@ export default {
 
   created() {
     axios
-      .get(this.$axios.defaults.baseURL+"/api/v1/work")
+      .get(this.$axios.defaults.baseURL + "/api/v1/work")
       .then((response) => {
         const data = response.data;
         this.works = this.getLatest(2, data);
@@ -170,7 +164,7 @@ export default {
   background-position: center;
 
   height: 215px;
-  border: solid 1px #2BABE2;
+  border: solid 1px #2babe2;
 }
 .center {
   margin: 0;
