@@ -26,6 +26,6 @@ $ npm run generate
 
 ```
 
-For detailed explanation on how things work, check out the \[documentation\](<ins>https://nuxtjs.org</ins>).
+For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-[Get the backend source code here](https://github.com/shadowcompiler/henri)
+[Get the backend source code here](https://github.com/henrid3v/henri)
