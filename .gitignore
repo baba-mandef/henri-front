@@ -90,4 +90,4 @@ sw.*
 *.swp
 
 # GIMP FILES
-*.xfc
+*.xcf
