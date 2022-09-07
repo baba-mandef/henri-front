@@ -1,22 +1,40 @@
 <template>
   <div>
-    <div class="banner">
+    <div class="container">
       <navbar />
-      <section class="hero1">
+      <section class="hero">
         <div class="hero-body">
-          <div class="center">
-            <h1
-              class="
-                title
-                is-size-1 is-size-4-mobile is-size-2-tablet is-size-1-desktop,
-                has-text-centered has-text-white
-              "
-            >
-              {-}ENRI-<span style="color: #2BABE2">DEV</span>
-            </h1>
-            <br />
-            <p class="subtitle has-text-centered sub" id="message">
-              <vue-typer
+          <div class="is-hidden-tablet" style="padding-bottom:30px; margin:auto">
+              
+                <img  class="bannerimg" src="~/assets/images/ban.jpeg" alt="">
+              </div>
+          <div class="columns">
+            
+            <div class="column is-half-tablet">
+              <div>
+                <h1
+                  class="
+                    title
+                    is-size-2
+                    is-size-3-mobile
+                    is-size-3-touch
+                    is-size-3-tablet
+                    is-size-3-desktop
+                    has-text-weight-bold has-text-centered-mobile has-text-black
+                  "
+                >
+                  We <span style="color: #2babe2">build</span> robust,<br />
+                  scalable <span style="color: #2babe2">apps</span> to
+                  <span style="color: #2babe2">solve</span> <br />
+                  people everyday <span style="color: #2babe2">issues</span>.
+                </h1>
+                <br />
+                <p
+                  class="subtitle has-text-black has-text-centered-mobile  has-text-weight-bold"
+                  id="message"
+                >
+                  <!--  <vue-typer
+              
                 :text="[
                   '{ Imagination, beyond comprehension ! }',
                   '{ Let IT change your life ! }',
@@ -31,8 +49,19 @@
                 erase-style="backspace"
                 :erase-on-complete="false"
                 caret-animation="blink"
-              ></vue-typer>
-            </p>
+              ></vue-typer> -->
+                  In a world where every day is a new challenge, we provide you
+                  with digital solutions that make your life easier.
+                </p>
+                <div class="line"></div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="is-hidden-mobile">
+              
+                <img  class="bannerimg" src="~/assets/images/ban.jpeg" alt="">
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -53,14 +82,66 @@ export default {
 </script>
 
 <style>
-.banner {
-  background-image: url("~/assets/images/1.jpg");
+
+.bannerimg {
+ /*  background-image: url("~/assets/images/ban.jpeg");
 
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
-}
+  width: 500px;
+  height: 250px;
+  margin: auto; */
+   position: relative; 
+/* top: 0;
+left: 0;
+bottom: 0;
+right: 0; */
+box-sizing: border-box;
+padding: 0;
+border: none;
+margin: auto;
+display: block;
 
+  
+
+ 
+  top: 50%;
+  
+ 
+
+
+/* width: 0;
+height: 0; */
+/* min-width: 100%;
+max-width: 100%;
+min-height: 100%;
+max-height: 100%; */
+}
+/* @media screen and (min-width: 1408px) {
+  .bannerimg {
+   border: solid 1px #2BABE2; 
+
+    width: 500px;
+     height: 250px;
+
+    margin: auto;
+    background-image: url("~/assets/images/ban.jpeg");
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+} */
+
+.line {
+ /*  width: 80%; */
+  height: 10px;
+  border: none;
+  margin-top: 50px;
+  border-radius: 10px;
+  background-color: #2babe2;
+}
 .center {
   margin: 0;
 
@@ -71,6 +152,6 @@ export default {
   transform: translate(-50%);
 }
 .vue-typer .custom.char {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 </style>
