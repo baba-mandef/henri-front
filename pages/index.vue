@@ -1,7 +1,7 @@
 <template>
   <section class="section">
-    <About></About>
-    <WorkCard></WorkCard>
+    <Services></Services>
+    <Solutions></Solutions>
     <BlogCard></BlogCard>
     <Contact></Contact>
   </section>
@@ -12,8 +12,8 @@
 import Card from "~/components/Card.vue";
 import CardB from "~/components/CardB.vue";
 import BlogCard from "~/components/BlogCard.vue";
-import WorkCard from "~/components/WorkCard.vue";
-import About from "~/components/About.vue";
+import WorkCard from "~/components/Solutions.vue";
+import About from "~/components/Services.vue";
 import Contact from "~/components/Contact.vue";
 export default {
   components: { Card, CardB, BlogCard, WorkCard, About, Contact },
