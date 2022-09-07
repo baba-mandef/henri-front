@@ -29,7 +29,7 @@
             </div>
             <div class="about-img">
               <b-image
-                :src='require("~/assets/images/brand2.png")'
+                :src='require("~/assets/images/branddd_back.png")'
                 alt="Profile"
                 ratio="1by1"
                 :rounded="rounded"
