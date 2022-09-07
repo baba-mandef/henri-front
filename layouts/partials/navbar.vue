@@ -1,5 +1,5 @@
 <template>
-  <b-navbar class="is-spaced" wrapper-class="container">
+  <b-navbar class="is-spaced" shadow>
     <template #brand>
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <img
@@ -10,13 +10,14 @@
     </template>
     <template #end>
       <b-navbar-item>
-        <nuxt-link to="/">Accueil</nuxt-link>
+        <nuxt-link to="/">Solutions</nuxt-link>
+      
       </b-navbar-item>
       <b-navbar-item>
-        <nuxt-link to="/work">Projets</nuxt-link>
+        <nuxt-link to="/work">Blog</nuxt-link>
       </b-navbar-item>
-      <b-navbar-item>
-        <nuxt-link to="/blog">Blog</nuxt-link>
+      <b-navbar-item style="border-bottom:3px solid black; border-radius:0px !important; padding: 0%; margin:2%; width: max-content;">
+        <nuxt-link to="/blog">Shop</nuxt-link>
       </b-navbar-item>
     </template>
 
@@ -38,7 +39,7 @@
 <style>
 .navbar a {
   font-weight: bold;
-  color: white;
+  color: #2BABE2;
 }
 a.nuxt-link-exact-active {
   color: #2BABE2;
