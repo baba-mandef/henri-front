@@ -1,5 +1,7 @@
 <template>
-  <b-navbar class="is-spaced" shadow>
+  <b-navbar class="is-spaced" 
+  
+   shadow>
     <template #brand>
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <img
