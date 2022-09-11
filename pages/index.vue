@@ -1,22 +1,22 @@
 <template>
   <section class="section">
-    <About></About>
-    <WorkCard></WorkCard>
-    <BlogCard></BlogCard>
-    <Contact></Contact>
+
+        <div class="columns">
+          <div class="column has-text-centered hero1">
+            <img src="~/assets/images/pannel.gif" alt="">
+            <h2 class="title is-2 has-text-primary">We Are Under Maintenance</h2>
+            <p class="subtitle is-4">We will be back soon !</p>
+          </div>
+        </div>
+
   </section>
 </template>
 
 
 <script>
-import Card from "~/components/Card.vue";
-import CardB from "~/components/CardB.vue";
-import BlogCard from "~/components/BlogCard.vue";
-import WorkCard from "~/components/WorkCard.vue";
-import About from "~/components/About.vue";
-import Contact from "~/components/Contact.vue";
+
 export default {
-  components: { Card, CardB, BlogCard, WorkCard, About, Contact },
+  
   name: "Home",
   data() {
     return {
@@ -35,7 +35,8 @@ export default {
   background-position: center;
 }
 .hero1 {
-  height: 590px;
+  max-width: fit-content;
+  margin: auto;
 }
 .center {
   margin: 0;
