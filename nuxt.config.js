@@ -77,7 +77,7 @@ export default {
   },
 
   axios: {
-    baseURL:'https://sadih.herokuapp.com'
+    baseURL:'https://shadowcompiler.pythonanywhere.com'
   },
 
   publicRuntimeConfig: {
