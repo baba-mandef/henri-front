@@ -1,22 +1,23 @@
 <template>
   <section class="section">
-    <Services></Services>
+   <div class="container is-max-desktop">
+     <Services></Services>
     <Solutions></Solutions>
-    <BlogCard></BlogCard>
+   <Team></Team>
     <Contact></Contact>
+   </div>
   </section>
 </template>
 
 
 <script>
-import Card from "~/components/Card.vue";
-import CardB from "~/components/CardB.vue";
-import BlogCard from "~/components/BlogCard.vue";
-import WorkCard from "~/components/Solutions.vue";
-import About from "~/components/Services.vue";
+
+import Solutions from "~/components/Solutions.vue";
+import Services from "~/components/Services.vue";
+import Team from "~/components/Team.vue";
 import Contact from "~/components/Contact.vue";
 export default {
-  components: { Card, CardB, BlogCard, WorkCard, About, Contact },
+  components: { Solutions, Services, Team, Contact },
   name: "Home",
   data() {
     return {
