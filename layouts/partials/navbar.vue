@@ -1,13 +1,13 @@
 <template>
-  <b-navbar class="is-spaced" 
+  <b-navbar class="is-spaced container" 
   
-   shadow>
+   shadow fixed-top >
     <template #brand>
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
-        <img
+        <!-- <img
           src="./../../assets/logo.png"
           alt="Imagination beyond compréhension"
-        />
+        /> -->Kreativ Inc
       </b-navbar-item>
     </template>
     <template #end>
@@ -18,7 +18,7 @@
       <b-navbar-item>
         <nuxt-link to="/work">Blog</nuxt-link>
       </b-navbar-item>
-      <b-navbar-item style="border-bottom:3px solid black; border-radius:0px !important; padding: 0%; margin:2%; width: max-content;">
+      <b-navbar-item >
         <nuxt-link to="/blog">Shop</nuxt-link>
       </b-navbar-item>
     </template>
@@ -41,9 +41,9 @@
 <style>
 .navbar a {
   font-weight: bold;
-  color: #2BABE2;
+  color: #393357;
 }
 a.nuxt-link-exact-active {
-  color: #2BABE2;
+  color: #393357;
 }
 </style>
