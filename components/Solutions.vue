@@ -1,140 +1,131 @@
 <template>
-  <div class="hero-body work-hero">
-    <div
-      class="has-text-centered"
-      style="margin-top: 15px; margin-bottom: 30px"
-    >
-      <p class="title is-size-4 is-size-5-mobile" style="padding-bottom: ">
-        Projets récents
-        <b-icon
+  <div class="hero">
+    <div class="hero-body work-hero">
+      <div class="column is-3">
+        <div class="line"></div>
+      </div>
+      <div
+        class="title is-size-4 has-text-centered"
+        style="margin-top: 15px; margin-bottom: 30px"
+      >
+        <p class="has-text-primary" style="padding-bottom: 20px">
+          SOLUTIONS
+          <!-- <b-icon
           icon="folder-outline"
           size="#is-small"
           style="color: #2babe2"
-        ></b-icon>
-      </p>
-    </div>
-    <div class="columns" v-if="loaded">
-      <div class="column is-6">
-        <div class="work-img"></div>
-      </div>
-
-      <div class="column work-prev" v-for="work in works" :key="work.id">
-        <div
-          class="work-prev-img"
-          v-bind:style="{
-            'background-image': 'url(' + work.banner + ')',
-          }"
-        ></div>
-        <hr />
-        <div class="">
-          <small class="is-uppercase"
-            >{{ new Date(work.created_at) | dateFormat("DD MMM YYYY") }}
-            <span
-              ><b-icon style="color: #2babe2" icon="calendar" size="is-small">
-              </b-icon>
-            </span>
-          </small>
-        </div>
-        <hr />
-        <div>
-          <p class="subtitle is-size-6 is-uppercase">
-            {{ work.name }}
-          </p>
-          <nuxt-link
-            :to="{
-              path: 'work/single',
-              query: { slug: '' + work.slug + '' },
-            }"
-          >
-            <div class="buttons">
-              <b-button type="is-primary" expanded outlined>
-                <span style="color: black">Lire</span></b-button
-              >
-            </div>
-          </nuxt-link>
-        </div>
-      </div>
-    </div>
-     <div v-if="!loaded" class="columns">
-      <div class="column is-4 blog-prev">
-        <p>
-          <b-skeleton height="215px" style=""></b-skeleton>
-
-          <b-skeleton active :count="1"></b-skeleton>
-          <b-skeleton height="80px" style=""></b-skeleton>
+        ></b-icon> -->
         </p>
+        <h1 class="has-text-weight-bold has-text-link">
+          <strong>INNOVATION A PASSION</strong>
+        </h1>
+    </div>
+      <div class="columns">
+          <div class="column is-5">
+          
+              <div style="margin-bottom:15px">
+                <img src="~/assets/images/d.png" alt="">
+              </div>
+              <div>
+                <h4
+                  class="
+                    title
+                    is-size-5
+                    has-text-weight-bold has-text-left
+                   has-text-link
+                  "
+                  style="margin-bottom:15px"
+                >
+                  Na Al’heri Food
+                </h4>
+              </div>
+              <div style="margin-bottom:15px">
+                <h4 class="has-text-primary has-text-weight-bold" >
+                  Na Al’heri Food is a food platform based in Porto-Novo at Benin. 
+                  NAF provides some features like food delivery, cooking recieps and a huges restaurant catalog.
+                </h4>
+              </div>
+              <div style="display: flex; justify-content: flex-start">
+                <button class="button is-link is-outlined">See Details >></button>
+              </div>
+            </div>
+          
       </div>
-     </div>
-    <div class="column is-full has-text-centered">
-      <p class="title is-size-5">
-        <nuxt-link to="/work" style="color: #2babe2"
-          >Voir tous les projets
-          <span
-            ><b-icon
-              style="color: #2babe2"
-              icon="hand-pointing-left"
-            ></b-icon></span
-        ></nuxt-link>
-      </p>
+       <div class="columns" style="display: flex; justify-content: flex-end">
+          <div class="column is-5" >
+          
+              <div style="margin-bottom:15px">
+                <img src="~/assets/images/m.png" alt="">
+              </div>
+              <div>
+                <h4
+                  class="
+                    title
+                    is-size-5
+                    has-text-weight-bold has-text-left
+                   has-text-link
+                  "
+                  style="margin-bottom:15px"
+                >
+                  I want
+                </h4>
+              </div>
+              <div style="margin-bottom:15px">
+                <h4 class="has-text-primary has-text-weight-bold" >
+                  I want is a african social media based on users whish. 
+                  I want is availaible on your browser and all your devices Android, iOS, windows and linux.
+                </h4>
+              </div>
+              <div style="display: flex; justify-content: flex-start">
+                <button class="button is-link is-outlined">See Details >></button>
+              </div>
+            </div>
+          
+      </div>
+
+       <div class="columns" style="display: flex; justify-content: flex-start">
+          <div class="column is-5" >
+          
+              <div style="margin-bottom:15px">
+                <img src="~/assets/images/s.png" alt="">
+              </div>
+              <div>
+                <h4
+                  class="
+                    title
+                    is-size-5
+                    has-text-weight-bold has-text-left
+                   has-text-link
+                  "
+                  style="margin-bottom:15px"
+                >
+                  SchoolMan
+                </h4>
+              </div>
+              <div style="margin-bottom:15px">
+                <h4 class="has-text-primary has-text-weight-bold" >
+                  SchoolManager is a Desktop application that provides you all the tools you need to manage a School. 
+                  It features cover all the school management sides. SchoolMan is available on windows, linux and macOS.
+                </h4>
+              </div>
+              <div style="display: flex; justify-content: flex-start">
+                <button class="button is-link is-outlined">See Details >></button>
+              </div>
+            </div>
+          
+      </div>
+
+      
+      <div style="display: flex; justify-content: flex-end">
+      <div class="column is-3">
+        <div class="line"></div>
+      </div>
+      </div>
     </div>
   </div>
 </template>
 
-
 <script>
-import axios from "axios";
-export default {
-  data() {
-    return {
-      loaded: false,
-      works: [],
-    };
-  },
-  methods: {
-    snackbar() {
-      this.$buefy.snackbar.open({
-        duration: 15000,
-        message:
-          "Le contenu de la page n'est pas entierement chargé. Veuillez verifier votre connexion internet",
-        type: "is-danger",
-        position: "is-bottom-right",
-        actionText: "Rafraîchir",
-        queue: false,
-        onAction: () => {
-          location.reload();
-        },
-      });
-    },
-
-    getLatest(size, payload) {
-      let endV = [];
-
-      for (var i = 0; i < size; i++) {
-        if (payload[i] == undefined) {
-          break;
-        } else {
-          endV.push(payload[i]);
-        }
-      }
-
-      return endV;
-    },
-  },
-
-  created() {
-    axios
-      .get(this.$axios.defaults.baseURL + "/api/v1/work")
-      .then((response) => {
-        const data = response.data;
-        this.works = this.getLatest(2, data);
-        this.loaded = true;
-      })
-      .catch((error) => {
-        this.snackbar();
-        console.log(error);
-      });
-  },
-};
 </script>
 
 <style>
@@ -178,6 +169,14 @@ export default {
 
 .work-prev {
   margin: 15px;
+}
+.line {
+  /*  width: 80%; */
+  height: 10px;
+  border: none;
+  margin-top: 50px;
+  border-radius: 10px;
+  background-color: #393357;
 }
 </style>
 
