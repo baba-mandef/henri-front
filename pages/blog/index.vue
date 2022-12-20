@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BlogCardList from "../../components/BlogCardList.vue";
+import BlogCardList from "../../components/.old/BlogCardList.vue";
 export default {
   layout: "blog",
   components: { BlogCardList },

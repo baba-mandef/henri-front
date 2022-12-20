@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import WorkCardList from "../../components/WorkCardList.vue";
+import WorkCardList from "../../components/.old/WorkCardList.vue";
 export default {
   layout: "work",
   components: { WorkCardList },
