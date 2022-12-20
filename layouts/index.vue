@@ -2,11 +2,11 @@
   <div>
     <div class="container">
       <navbar />
-      <section class="hero">
+      <section class="hero is-medium">
         <div class="hero-body">
           <div class="is-hidden-tablet" style="padding-bottom:30px; margin:auto">
               
-                <img  class="bannerimg" src="~/assets/images/ban.jpeg" alt="">
+                <img  class="bannerimg" src="~/assets/images/ban.png" alt="">
               </div>
           <div class="columns">
             
@@ -19,18 +19,18 @@
                     is-size-3-mobile
                     is-size-3-touch
                     is-size-3-tablet
-                    is-size-3-desktop
-                    has-text-weight-bold has-text-centered-mobile has-text-black
+                    is-size-2-desktop
+                    has-text-weight-bold has-text-centered-mobile has-text-primary
                   "
                 >
-                  We <span style="color: #2babe2">build</span> robust,<br />
-                  scalable <span style="color: #2babe2">apps</span> to
-                  <span style="color: #2babe2">solve</span> <br />
-                  people everyday <span style="color: #2babe2">issues</span>.
+                  We <span class="secolor">build</span> robust,<br />
+                  scalable <span class="secolor">apps</span> to
+                  <span class="secolor">solve</span> <br />
+                  people everyday <span class="secolor">issues</span>.
                 </h1>
                 <br />
                 <p
-                  class="subtitle has-text-black has-text-centered-mobile  has-text-weight-bold"
+                  class="subtitle has-text-black has-text-centered-mobile "
                   id="message"
                 >
                   <!--  <vue-typer
@@ -59,7 +59,7 @@
             <div class="column">
               <div class="is-hidden-mobile">
               
-                <img  class="bannerimg" src="~/assets/images/ban.jpeg" alt="">
+                <img  class="bannerimg" src="~/assets/images/ban.png" alt="">
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ max-height: 100%; */
   border: none;
   margin-top: 50px;
   border-radius: 10px;
-  background-color: #2babe2;
+  background-color: #393357;
 }
 .center {
   margin: 0;
@@ -153,5 +153,8 @@ max-height: 100%; */
 }
 .vue-typer .custom.char {
   color: rgb(0, 0, 0);
+}
+.secolor{
+  color: #BB9140
 }
 </style>
