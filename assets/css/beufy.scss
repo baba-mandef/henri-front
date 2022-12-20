@@ -7,18 +7,23 @@
 */
 
 //colors
-$gris : #2BABE2;
+$gris : #393357;
 $primary: $gris;
-$sur: #ffffff76;
+$sur: #ffffff;
+$yell : #BB9140;
+$link : $yell;
+
 
 $skeleton-duration: 2s;
 
 //navbar
 $navbar-item-color : white;
-$navbar-item-hover-background-color:#afccd8;
+$navbar-item-hover-background-color:#BB9140;
 $navbar-item-active-background-color : #67727b;
 $navbar-burger-color: #ffffff;
 $navbar-background-color : #ffffff;
+$footer-background-color:#ffffff;
+//$footer-padding:0rem;
 
 //font
 $family-primary: 'Quicksand';
