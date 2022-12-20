@@ -13,7 +13,7 @@
             >
             </b-icon> -->
           </h1>
-          <h1 class="has-text-weight-bold has-text-black mt-5 ">
+          <h1 class="has-text-weight-bold  mt-5 has-text-link ">
             <strong>FEEL FREE TO DISCOVER OUR SERVICES</strong>
           </h1>
         </div>
@@ -35,10 +35,10 @@
                 </h4>
               </div>
               <div style="margin-bottom:15px">
-                <h4>Scalable web and apps implementation.</h4>
+                <h4 class="has-text-primary has-text-weight-bold" >Scalable web and apps implementation.</h4>
               </div>
-              <div style="display: flex; justify-content: flex-end">
-                <button class="button is-primary is-outlined">See Details >></button>
+              <div style="display: flex; justify-content: flex-start">
+                <button class="button is-link is-outlined">See Details >></button>
               </div>
             </div>
           </div>
@@ -59,10 +59,10 @@
                 </h4>
               </div>
               <div style="margin-bottom:15px">
-                <h4>User Interface and User Experience.</h4>
+                <h4  class="has-text-primary has-text-weight-bold">User Interface and User Experience.</h4>
               </div>
-              <div style="display: flex; justify-content: flex-end">
-                <button class="button is-primary is-outlined">See Details >></button>
+              <div style="display: flex; justify-content: flex-start">
+                <button class="button is-link is-outlined">See Details >></button>
               </div>
             </div>
           </div>
@@ -83,10 +83,10 @@
                 </h4>
               </div>
               <div style="margin-bottom:15px">
-                <h4>Written, audio and visual content.</h4>
+                <h4  class="has-text-primary has-text-weight-bold">Written, audio and visual content.</h4>
               </div>
-              <div style="display: flex; justify-content: flex-end">
-                <button class="button is-primary is-outlined">See Details >></button>
+              <div style="display: flex; justify-content: flex-start">
+                <button class="button is-link is-outlined">See Details >></button>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@ export default {
 
 <style>
 .tabs li.is-active a {
-  color: #2babe2;
+  color: #393357;
 }
 .konsole-icon {
   height: 100px;
@@ -152,4 +152,7 @@ export default {
     margin: auto;
   }
 } ;
+.secolor{
+  color: #BB9140
+}
 </style>
