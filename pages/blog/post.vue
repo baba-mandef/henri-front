@@ -152,6 +152,7 @@ export default {
     return {
       posts: [],
       pk: null,
+      slug: "",
       comments: [],
       loaded: false,
       modal: false,
@@ -235,13 +236,15 @@ export default {
       .then((response) => {
         this.posts = response.data;
         var post_pk = response.data[0]["id"];
+        var slug = response.data[0]["slug"];
         this.pk = post_pk;
+        
 
         axios
           .get(
             this.$axios.defaults.baseURL +
               "/api/v1/blog/comment?post=" +
-              post_pk
+              slug
           )
           .then((response) => {
             this.comments = response.data;
