@@ -77,7 +77,7 @@ export default {
   },
 
   axios: {
-    baseURL:'https://shadowcompiler.pythonanywhere.com'
+    baseURL:'https://abiodoun.rezolusoft.com'
   },
 
   publicRuntimeConfig: {
